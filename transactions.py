@@ -15,9 +15,9 @@ print(txn_types)
 print(countries)
 print(random.choice(branches))
 random.uniform(100,500000)
-def generate_transaction():
+def generate_transaction(i):
     return{
-        "txn_id":"TXN001",
+        "txn_id":f"TXN{i:04d}",
         "branch":random.choice(branches),
         "status":random.choice(statuses),
         "account_type":random.choice(account_types),
@@ -30,10 +30,9 @@ def generate_transaction():
                       }
 transactions=[]
 for i in range(1,101):
-    txn=generate_transaction()
+    txn=generate_transaction(i)
     transactions.append(txn)
 
-print(generate_transaction())
 
 
 
